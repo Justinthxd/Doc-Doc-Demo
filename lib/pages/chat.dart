@@ -194,7 +194,7 @@ class _ChatState extends State<Chat> {
                 const SizedBox(width: 15),
               ],
             ),
-            const SizedBox(height: 55),
+            const SizedBox(height: 15),
           ],
         ),
       ),
