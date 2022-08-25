@@ -224,152 +224,142 @@ class _HomeState extends State<Home> with TickerProviderStateMixin {
           : Container(
               height: size.height,
               width: size.width,
-              child: Stack(
+              child: ListView(
+                physics: const BouncingScrollPhysics(),
                 children: [
-                  ListView(
-                    physics: const BouncingScrollPhysics(),
-                    children: [
-                      const SizedBox(height: 5),
-                      Container(
-                        height: 120,
-                        child: ListView(
-                          scrollDirection: Axis.horizontal,
-                          children: [
-                            for (int i = 0; i < titles.length; i++)
-                              Option(
-                                title: titles[i],
-                                color: colors[i],
-                                icon: icons[i],
-                              ),
-                          ],
+                  const SizedBox(height: 5),
+                  Container(
+                    height: 120,
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        for (int i = 0; i < titles.length; i++)
+                          Option(
+                            title: titles[i],
+                            color: colors[i],
+                            icon: icons[i],
+                          ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    width: 600,
+                    child: Row(
+                      children: [
+                        const SizedBox(width: 20),
+                        const Text(
+                          'chats',
+                          style: TextStyle(
+                            fontSize: 20,
+                            color: Colors.black54,
+                            fontWeight: FontWeight.bold,
+                          ),
                         ),
-                      ),
-                      Container(
-                        width: 600,
-                        child: Row(
-                          children: [
-                            const SizedBox(width: 20),
-                            const Text(
-                              'chats',
-                              style: TextStyle(
-                                fontSize: 20,
-                                color: Colors.black54,
-                                fontWeight: FontWeight.bold,
-                              ),
-                            ),
-                            const SizedBox(width: 20),
-                            Expanded(
-                              child: Container(
-                                margin:
-                                    const EdgeInsets.symmetric(horizontal: 20),
-                                child: const Divider(),
-                              ),
-                            ),
-                          ],
+                        const SizedBox(width: 20),
+                        Expanded(
+                          child: Container(
+                            margin: const EdgeInsets.symmetric(horizontal: 20),
+                            child: const Divider(),
+                          ),
                         ),
+                      ],
+                    ),
+                  ),
+                  ListTile(
+                    contentPadding: const EdgeInsets.all(17),
+                    onTap: () {
+                      Navigator.pushNamed(context, '/chat');
+                    },
+                    leading: const CircleAvatar(
+                      backgroundImage: NetworkImage(
+                        'https://media.istockphoto.com/photos/female-doctor-in-mask-and-with-stethoscope-on-gray-background-picture-id1191432912?k=20&m=1191432912&s=612x612&w=0&h=_DxjpDAHaNkLiGiDGiIc7nxmyQPkGfi2rBA-zbgmZmM=',
                       ),
-                      ListTile(
-                        contentPadding: const EdgeInsets.all(17),
-                        onTap: () {
-                          Navigator.pushNamed(context, '/chat');
-                        },
-                        leading: const CircleAvatar(
+                      backgroundColor: Color.fromARGB(95, 206, 206, 206),
+                      radius: 30,
+                    ),
+                    title: const Text(
+                      'Maria Isabel',
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    subtitle: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          'Online',
+                          style: TextStyle(
+                            fontSize: 15,
+                            color: Color.fromARGB(95, 45, 231, 28),
+                            fontWeight: FontWeight.bold,
+                            shadows: [
+                              BoxShadow(
+                                blurRadius: 1,
+                                color: Color.fromARGB(183, 45, 90, 46),
+                                offset: Offset(0, 0),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Text(
+                          'Psicologa - Medicina General',
+                        ),
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 20),
+                    child: const Divider(),
+                  ),
+                  ListTile(
+                    contentPadding: const EdgeInsets.all(17),
+                    onTap: () {},
+                    leading: Stack(
+                      children: const [
+                        CircleAvatar(
                           backgroundImage: NetworkImage(
-                            'https://media.istockphoto.com/photos/female-doctor-in-mask-and-with-stethoscope-on-gray-background-picture-id1191432912?k=20&m=1191432912&s=612x612&w=0&h=_DxjpDAHaNkLiGiDGiIc7nxmyQPkGfi2rBA-zbgmZmM=',
+                            'https://media.istockphoto.com/photos/confident-successful-mature-doctor-at-hospital-picture-id1346124900?b=1&k=20&m=1346124900&s=170667a&w=0&h=72WNlS21HoZ3ePFDicsERYpr_KCJwrM8HqzjTdiyNdc=',
                           ),
                           backgroundColor: Color.fromARGB(95, 206, 206, 206),
                           radius: 30,
                         ),
-                        title: const Text(
-                          'Maria Isabel',
+                      ],
+                    ),
+                    title: const Text(
+                      'Carlos Santana',
+                      style: TextStyle(
+                        fontSize: 22,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ),
+                    subtitle: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: const [
+                        Text(
+                          'Offline',
                           style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.w500,
+                            fontSize: 15,
+                            color: Color.fromARGB(95, 176, 179, 176),
+                            fontWeight: FontWeight.bold,
+                            shadows: [
+                              BoxShadow(
+                                blurRadius: 1,
+                                color: Color.fromARGB(183, 105, 105, 105),
+                                offset: Offset(0, 0),
+                              ),
+                            ],
                           ),
                         ),
-                        subtitle: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
-                            Text(
-                              'Online',
-                              style: TextStyle(
-                                fontSize: 15,
-                                color: Color.fromARGB(95, 45, 231, 28),
-                                fontWeight: FontWeight.bold,
-                                shadows: [
-                                  BoxShadow(
-                                    blurRadius: 1,
-                                    color: Color.fromARGB(183, 45, 90, 46),
-                                    offset: Offset(0, 0),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Text(
-                              'Psicologa - Medicina General',
-                            ),
-                          ],
+                        Text(
+                          'Pediatra - Psicologo',
                         ),
-                      ),
-                      Expanded(
-                        child: Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 20),
-                          child: const Divider(),
-                        ),
-                      ),
-                      ListTile(
-                        contentPadding: const EdgeInsets.all(17),
-                        onTap: () {},
-                        leading: Stack(
-                          children: const [
-                            CircleAvatar(
-                              backgroundImage: NetworkImage(
-                                'https://media.istockphoto.com/photos/confident-successful-mature-doctor-at-hospital-picture-id1346124900?b=1&k=20&m=1346124900&s=170667a&w=0&h=72WNlS21HoZ3ePFDicsERYpr_KCJwrM8HqzjTdiyNdc=',
-                              ),
-                              backgroundColor:
-                                  Color.fromARGB(95, 206, 206, 206),
-                              radius: 30,
-                            ),
-                          ],
-                        ),
-                        title: const Text(
-                          'Carlos Santana',
-                          style: TextStyle(
-                            fontSize: 22,
-                            fontWeight: FontWeight.w500,
-                          ),
-                        ),
-                        subtitle: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: const [
-                            Text(
-                              'Offline',
-                              style: TextStyle(
-                                fontSize: 15,
-                                color: Color.fromARGB(95, 176, 179, 176),
-                                fontWeight: FontWeight.bold,
-                                shadows: [
-                                  BoxShadow(
-                                    blurRadius: 1,
-                                    color: Color.fromARGB(183, 105, 105, 105),
-                                    offset: Offset(0, 0),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Text(
-                              'Pediatra - Psicologo',
-                            ),
-                          ],
-                        ),
-                      ),
-                      Expanded(
-                        child: Container(
-                          margin: const EdgeInsets.symmetric(horizontal: 20),
-                          child: const Divider(),
-                        ),
-                      ),
-                    ],
+                      ],
+                    ),
+                  ),
+                  Container(
+                    margin: const EdgeInsets.symmetric(horizontal: 20),
+                    child: const Divider(),
                   ),
                 ],
               ),

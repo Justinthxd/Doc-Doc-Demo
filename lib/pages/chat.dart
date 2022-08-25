@@ -22,12 +22,12 @@ class _ChatState extends State<Chat> {
     final ref = FirebaseDatabase.instance.ref();
     final main = Provider.of<MainProvider>(context);
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 255, 255),
+      backgroundColor: const Color.fromARGB(255, 255, 255, 255),
       appBar: AppBar(
         backgroundColor: const Color.fromARGB(255, 12, 66, 110),
         title: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
+          children: const [
             Text(
               'Maria Isabel',
               style: TextStyle(
@@ -37,7 +37,7 @@ class _ChatState extends State<Chat> {
             ),
             Text(
               'Online',
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 15,
                 color: Colors.white38,
               ),
@@ -47,20 +47,20 @@ class _ChatState extends State<Chat> {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.video_call_rounded,
               size: 32,
             ),
           ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
           IconButton(
             onPressed: () {},
-            icon: Icon(
+            icon: const Icon(
               Icons.call_rounded,
               size: 30,
             ),
           ),
-          SizedBox(width: 10),
+          const SizedBox(width: 10),
         ],
       ),
       body: Container(
@@ -114,7 +114,7 @@ class _ChatState extends State<Chat> {
                       vertical: 5,
                     ),
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(66, 180, 180, 180),
+                      color: const Color.fromARGB(66, 180, 180, 180),
                       borderRadius: BorderRadius.circular(9),
                     ),
                     child: TextField(
@@ -236,9 +236,9 @@ class Message extends StatelessWidget {
                     horizontal: 0,
                   ),
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 236, 236, 236),
+                    color: const Color.fromARGB(255, 236, 236, 236),
                     borderRadius: BorderRadius.circular(8),
-                    gradient: LinearGradient(
+                    gradient: const LinearGradient(
                       begin: Alignment.topCenter,
                       end: Alignment.bottomCenter,
                       colors: [
